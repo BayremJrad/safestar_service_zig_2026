@@ -2,60 +2,7 @@ openapi: 3.0.0
 info:
   title: Remote Services API v1.2.0
   version: 1.0.0
-  description: >-
-    The Remote Services API is designed to allow external systems to remotely
-    control and interact with specific functions of a vehicle. This API is
-    particularly useful for enabling remote access to vehicles for various
-    purposes such as convenience, security, and pre-emptive climate control.
-
-
-    Currently, the following key remote actions are supported:
-
-
-    - Turn engine on
-
-    - Turn engine off
-
-    - Get engine status
-
-    - Get climate settings
-
-    - Set climate settings
-
-    - Lock doors
-
-    - Unlock doors
-        
-
-    <img
-    src="https://voyager.postman.com/illustration/get-in-touch-postman-hoverboard-illustration.svg"
-    width="240" height="180">
-
-
-    ### Security and Privacy Considerations
-
-
-    - Secure authentication is required to access the API.
-
-    - Actions are logged for security and auditing purposes.
-
-    - Only authorized users or systems can interact with vehicle controls.
-        
-
-    ### Scalability and Reliability
-
-
-    - Designed to handle a high number of requests with minimal latency.
-
-    - Reliable communication with vehicle systems for real-time control.
-        
-
-    ### Integration
-
-
-    - API is compatible with various vehicle models and makes.
-
-    - Supports integration with mobile apps and smart home systems.
+  description: ''
 servers:
   - url: '{{baseUrl}}'
 paths:
@@ -89,11 +36,7 @@ paths:
           description: Unexpected error
       tags:
         - Engine
-      description: >-
-        Successful execution will turn the engine on. Users must have the remote
-        access feature enabled in their Connected Vehicle account and all
-        maintence indicators in a satisfactory state or the action will not be
-        authorized.
+      description: ''
     parameters:
       - name: vin
         in: path
@@ -121,11 +64,7 @@ paths:
           description: Unexpected error
       tags:
         - Engine
-      description: >-
-        Turns the engine off upon successful execution. Users must have the
-        remote access feature enabled in their Connected Vehicle account and all
-        maintence indicators in a satisfactory state or the action will not be
-        authorized.
+      description: ''
     parameters:
       - name: vin
         in: path
@@ -165,13 +104,7 @@ paths:
           description: Unexpected error
       tags:
         - Engine
-      description: >-
-        As status checks are core features of the PM connected car experience,
-        this feature is allowed by default in the customer account settings.
-        However, users do have the option to revoke remote status reporting
-        access to APIs and rely only on the car dashboard indicators. Thus,
-        developers should check for a successful response before continuing with
-        any further workflows.
+      description: ''
     parameters:
       - name: vin
         in: path
@@ -205,11 +138,7 @@ paths:
           description: Unexpected error
       tags:
         - Climate Settings
-      description: >-
-        Gets the current interior climate settings for the connected car. Users
-        must have the remote access feature enabled in their Connected Vehicle
-        account or the action will not be authorized. If the car is off, the
-        system will return the climate settings used in the last session.
+      description: ''
     parameters:
       - name: vin
         in: path
@@ -235,12 +164,7 @@ paths:
           description: Unexpected error
       tags:
         - Climate Settings
-      description: >-
-        Sets the climate controls for the connected car. Users must have the
-        remote access feature enabled in their Connected Vehicle account or the
-        action will not be authorized. If the car is on, the settings will be
-        applied immediately. If the car is off, the settings will be saved and
-        used in the next session.
+      description: ''
       requestBody:
         content:
           application/json:
